@@ -1,0 +1,73 @@
+version: "3.1"
+
+
+nlu:
+- intent: inform_hdi
+  examples: |
+    - Give me the maximum HDI of France from 1990 to 2021
+    - Give me the minimum HDI of France from 1990 to 2021
+    - Give me the average HDI of France from 1990 to 2021
+    - What is the maximum HDI in 2021?
+    - What is the minimum HDI in 2021?
+    - What is the average HDI in 2021?
+
+- intent: inform_gni 
+  examples: |
+    - Give me the maximum GNI per capita of France from 1990 to 2021
+    - Give me the minimum GNI per capita of France from 1990 to 2021
+    - Give me the average GNI per capita of France from 1990 to 2021
+    - What is the maximum GNI per capita in 2021?
+    - What is the minimum GNI per capita in 2021?
+    - What is the average GNI per capita in 2021?
+
+- intent: inform_life_expectancy
+  examples: |
+    - What was the average life expectancy in 2010?
+    - Can you tell me the life expectancy for 1991?
+    - I want to know the average life expectancy in 2005.
+    - Life expectancy in 2000?
+    - How long were people living on average in 2012?
+    - What's the expected lifespan for someone born in 1985?
+    - Show me the life expectancy data of 2008.
+    - Average lifespan in the year 2015?
+    - What is the typical life duration for 2009?
+    - Tell me about the longevity of people in 2010.
+    - Life duration average in 1990?
+    - Expected years of life in 2016?
+    - Duration of life in 2011?
+    - What was the life expectancy rate in the '90s?
+    - Give me the life expectancy figures for 2007.
+    - What was the usual age people lived to in 2013?
+    - Life expectancy stats for 2003?
+    - How many years did people live on average in 2014?
+    - What were the average years of life expected in 2010?
+
+- intent: inform_max_life_expectancy_by_country
+  examples: |
+    - In 1999, which country had the maximum life expectancy?
+    - Which country had the highest life expectancy in 2005?
+    - What was the country with the best life expectancy for 2010?
+    - In 2000, where did people live the longest?
+
+- intent: inform_emissions
+  examples: |
+    - What is the average emissions in 2010?
+    - Give me the average CO2 emissions of France?
+    - Tell me what is the average emissions of Morocco between 1990 and 2010?
+    - What is the average CO2 emissions of Spain in 2000?
+    - What's the maximum CO2 emissions of France?
+    - What's the minimum CO2 emissions of Germany in 2005?
+    - Give me the maximum CO2 emissions of France from 1990 to 2020
+    - Give me the minimum CO2 emissions of Sweden from 1990 to 2020
+
+- intent: inform_best_CO2
+  examples: |
+    - What are the [5](number) most polluting countries in 2010?
+    - Which countries have the highest CO2 emissions in 1990?
+    - Give me the [10](number) most polluting countries in 2000.
+
+- intent: inform_worst_CO2
+  examples: |
+    - What are the [5](number) least polluting countries in 2010?
+    - Which countries have the lowest CO2 emissions in 1990?
+    - Give me [10](number) the least polluting countries in 2000.

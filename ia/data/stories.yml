@@ -1,0 +1,90 @@
+version: "3.1"
+
+stories:
+- story: IDH
+  steps:
+  - intent: inform_hdi
+  - action: action_hdi
+
+- story: GNI_per_capita
+  steps:
+  - intent: inform_gni
+  - action: action_gni
+
+# Inform life expectancy
+- story: User asks for average life expectancy by year
+  steps:
+  - intent: inform_life_expectancy
+    entities:
+      - year: "2010"
+  - action: action_life_expectancy
+
+- story: User asks for maximum life expectancy country by year
+  steps:
+  - intent: inform_max_life_expectancy_by_country
+    entities:
+      - year: "1999"
+  - action: action_life_expectancy
+
+- story: User asks for average life expectancy without year and provides it later
+  steps:
+  - intent: inform_life_expectancy
+  - action: action_life_expectancy
+  - intent: inform_life_expectancy
+    entities:
+      - year: "2010"
+  - action: action_life_expectancy
+
+- story: User asks for maximum life expectancy country without year and provides it later
+  steps:
+  - intent: inform_max_life_expectancy_by_country
+  - action: action_life_expectancy
+  - intent: inform_max_life_expectancy_by_country
+    entities:
+      - year: "1999"
+  - action: action_life_expectancy
+
+# Inform emission, handle many questions without year or/and country
+
+- story: Emissions de CO2
+  steps:
+  - intent: inform_emissions
+  - action: action_emissions
+
+# Most&Least polluting countries 
+
+- story: User asks for the most polluting countries
+  steps:
+  - intent: inform_best_CO2
+    entities:
+      - year: "2010"
+      - number: "5" 
+  - action: action_best_CO2
+
+- story: User asks for the most polluting countries without year and provides it later
+  steps:
+  - intent: inform_best_CO2
+  - action: action_best_CO2
+  - intent: inform_best_CO2
+    entities:
+      - year: "2010"
+      - number: "5" 
+  - action: action_best_CO2
+
+- story: User asks for the least polluting countries
+  steps:
+  - intent: inform_worst_CO2
+    entities:
+      - year: "2010"
+      - number: "5" 
+  - action: action_worst_CO2
+
+- story: User asks for the least polluting countries without year and provides it later
+  steps:
+  - intent: inform_worst_CO2
+  - action: action_worst_CO2
+  - intent: inform_worst_CO2
+    entities:
+      - year: "2010"
+      - number: "5" 
+  - action: action_worst_CO2

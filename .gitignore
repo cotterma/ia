@@ -1,0 +1,7 @@
+# CSV files access lock
+.~lock.*
+
+# Temporary Rasa files
+ia/.rasa 
+ia/models
+ia/actions/__pycache__

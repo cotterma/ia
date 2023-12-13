@@ -1,0 +1,13 @@
+FROM rasa/rasa:latest
+WORKDIR /app
+COPY . /app
+USER root
+
+# Install spaCy and download the en_core_web_md model
+RUN pip install spacy
+RUN python -m spacy download en_core_web_md
+
+# Train the Rasa model
+RUN rasa train
+
+USER 1001

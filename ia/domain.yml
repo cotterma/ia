@@ -1,0 +1,46 @@
+version: "3.1"
+
+intents:
+  - inform_hdi
+  - inform_gni
+  - inform_life_expectancy
+  - inform_max_life_expectancy_by_country
+  - inform_emissions
+  - affirm
+  - deny
+  - inform_best_CO2
+  - inform_worst_CO2
+
+
+actions:
+  - action_hdi
+  - action_gni
+  - action_life_expectancy
+  - action_emissions
+  - action_best_CO2
+  - action_worst_CO2
+
+slots:
+  number:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity : number
+
+entities:
+  - number
+
+
+
+responses:
+  utter_ask_for_year:
+    - text: "Please provide the year you're interested in."
+  
+  utter_max_life_expectancy_country:
+    - text: "In {year}, the country with the maximum life expectancy was {country} with an expectancy of {life_expectancy} years."
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

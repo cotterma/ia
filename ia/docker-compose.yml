@@ -1,0 +1,14 @@
+version: '3'
+services:
+  rasa:
+    image: hamdaneyassine/my-rasa-project:v1
+    ports:
+      - "5005:5005"
+    depends_on:
+      - rasa_actions
+    command:
+      - run
+  rasa_actions:
+    image: hamdaneyassine/my-rasa-actions:v1
+    ports:
+      - "5055:5055"
